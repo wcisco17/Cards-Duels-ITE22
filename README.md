@@ -19,3 +19,34 @@
 <p align="center">
   ITE 222 Project (Card Game) - Purpose player is given 3 cards can fight with bots to win (3 rounds).   
 </p>
+
+
+
+
+---
+
+
+
+
+# Concept & Idea
+
+<p align="center" >
+Card Duels is a card selection game, the whole purpose of Card Duels is for players to utilize the random cards they are given in the beginning and use them to win and gain advantage against the other bot or another player.
+</p>
+
+# Class Flow
+<a>
+  <img 
+    src="https://raw.githubusercontent.com/wcisco17/ITE221-Project-Monster-Card-Game/master/Classes%20Card%20Game.png"
+    alt"Class Flow"
+  />
+</a>
+
+# Program Flow
+
+<a>
+ <img 
+    src="https://raw.githubusercontent.com/wcisco17/ITE221-Project-Monster-Card-Game/master/Flow%20Chart%20Card%20Game-Page-1.png"
+    alt"Class Flow"
+  />
+</a>
