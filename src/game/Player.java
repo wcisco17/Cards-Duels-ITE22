@@ -10,6 +10,8 @@ public class Player implements IPlayer {
     public int health = 10;
     
     public Monster monster;
+    public Magician magician;
+    public Traps traps;
 
     Helper helper = new Helper();
     
@@ -26,9 +28,24 @@ public class Player implements IPlayer {
 	public String profile(String n) {
         this.name = n;
 
-        monster = new Monster(helper.generate(helper.monsterNames), helper.generateNum(), helper.generateNum(), helper.generateNum());
-
-        return "Name " + this.name + "\n" + "Health " + this.health + "\n" + "Players Card " + "\n" + monster.toString();
+        monster = new Monster(helper.generate(helper.monsterNames), helper.generateNum() + 4, 
+        		helper.generateNum() + 10, helper.generateNum() + 7);
+        
+        magician = new Magician(helper.generate(helper.magicianNames), helper.generateNum() + 4, 
+        		helper.generateNum() + 10, helper.generateNum() + 7);
+        
+        traps = new Traps(helper.generate(helper.trapCardsNames), helper.generateNum() + 4, 
+        		helper.generateNum() + 10, helper.generateNum() + 7);
+        
+        
+        return "Name " + this.name + "\n" + "Health " + this.health + "\n" + "Players Card " + 
+        "\n" +  "\n"  + "****************************"
+        + "\n" + monster.toString() + "\n" 
+        +	"****************************" 
+        + "\n" + magician.toString() + "\n"
+        +	"****************************"
+        + "\n" + traps.toString() + "\n"
+        ;
     }
     
     public Player(String n) {

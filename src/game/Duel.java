@@ -2,9 +2,9 @@ package game;
 
 public class Duel extends Helper {
     private int skip;
-    private String name = null;
-    private String bot = null;
-    Cards play;
+    private String name;
+    private String bot;
+    Monster play;
     Player PLAYER_1; 
     Player BOT;
     
@@ -66,13 +66,12 @@ public class Duel extends Helper {
         } while (skip < 1 || skip > 2);
 
         if (skip == 1) {
-        	if (this.duel() == 1) {
-        		out("Player 1 wins");
-        	} else {
-//        		out("Player 2 Wins!! "+ "Player 1: HEALTH = " + PLAYER_1.health + "BOT: HEALTH = " + BOT.health);
-        		out("BOT WINS");
-        	}
-
+        	
+        	if (this.duel() == 1)
+        		out("Player one Wins");
+        		else if (this.duel() == 2)
+        		out("Bot one Wins");
+        	
         } else if (skip == 2) {
             out("Going back to the menu.. ");
             this.startGame();
@@ -82,14 +81,14 @@ public class Duel extends Helper {
         
  
     }
-    
+  
 
     public int duel() {
     	
     		out(
-    			"Preparing For Duel! "
+    			"Preparing For Duel! " + PLAYER_1.monster.name + " VS." + BOT.monster.name
     		);
-
+    			
 	        while (true) {
 	        	if (play.generateAttack(PLAYER_1.monster, BOT.monster)) {
 	        		PLAYER_1.health -= 1;
@@ -107,7 +106,7 @@ public class Duel extends Helper {
 	        				"BOT HEALTH: " + BOT.health
 	        			);
 	        		return 2;
-	        	}
+		        }
 	        }
 	        
     }

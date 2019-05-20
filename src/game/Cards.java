@@ -7,7 +7,6 @@ interface ICards {
     public int getHealth();
     public int getDefence();
     public int getDamage();
-    public boolean generateAttack(Cards card_1, Cards card_2);
 }
 
 public class Cards implements ICards {    
@@ -50,14 +49,6 @@ public class Cards implements ICards {
     	return damage;
     }
     
-    public boolean generateAttack(Cards card_1, Cards card_2) {
-    	card_1.setHealth(card_2.getHealth() - (card_1.getDamage() - card_2.getDefence()));
-    	
-    	if (card_2.health <= 0) {
-    		return true;
-    	}
-    	return false;
-    }
     
     
 }
