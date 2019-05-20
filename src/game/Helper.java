@@ -17,7 +17,28 @@ public class Helper implements IHelper {
             "The Greater Storm Serpent",
             "The Disfigured Entity"
         };
-        
+    
+    public static String[] magicianNames = {
+            "izelin",
+            "uleus",
+            "ivexium",
+            "eqihr",
+            "ikius",
+            "oras",
+            "hudarin",
+            "uzitarum",
+    	};
+   
+    public static String[] trapCardsNames = {
+            "Chipper",
+            "Twilight",
+            "Aeolus",
+            "Calimerio",
+            "Lanstrom",
+            "Mystic",
+            "Snow",
+            "Giddy",
+    };
         public Scanner console = new Scanner(System.in);
 
         /**
