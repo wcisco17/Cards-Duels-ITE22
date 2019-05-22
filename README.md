@@ -54,5 +54,4 @@ Card Duels is a card selection game, the whole purpose of Card Duels is for play
 
 # Slide - Link below
 
-https://stamfordedu-my.sharepoint.com/personal/1803130006_students_stamford_edu/_layouts/15/Doc.aspx?sourcedoc={40c8e767-6b20-4150-b1ef-2b2da8eb3f36}&action=embedview&wdAr=1.7777777777777777
-
+https://stamfordedu-my.sharepoint.com/personal/1803130006_students_stamford_edu/_layouts/15/Doc.aspx?sourcedoc={40c8e767-6b20-4150-b1ef-2b2da8eb3f36}&amp;action=embedview&amp;wdAr=1.7777777777777777
