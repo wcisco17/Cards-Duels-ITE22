@@ -10,10 +10,11 @@ interface ICards {
 }
 
 public class Cards implements ICards {    
+	public String cardName;
+	
     public int attack;
     public int defence;
     public String name;
-    
     public int health;
     public int damage;
   
@@ -48,7 +49,5 @@ public class Cards implements ICards {
     public int getDamage() {
     	return damage;
     }
-    
-    
-    
+
 }

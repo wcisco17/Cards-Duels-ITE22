@@ -3,7 +3,7 @@ package game;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Helper implements IHelper {
+public class Helper {
     public String programName = "CARD DUELS";
     public static String[] monsterNames = {
             "Mistwings",

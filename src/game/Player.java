@@ -1,11 +1,6 @@
 package game;
 
-interface IPlayer {
-	public boolean isPlayerAlive(int h);
-	public String profile(String n);
-}
-
-public class Player implements IPlayer {
+public class Player {
     public String name;
     public int health = 10;
     
