@@ -7,16 +7,15 @@ interface ICards {
     public int getHealth();
     public int getDefence();
     public int getDamage();
+//    public int specialAttack();
+    public String typeOFCard();
 }
 
-public class Cards implements ICards {    
-	public String cardName;
-	
-    public int attack;
-    public int defence;
-    public String name;
-    public int health;
-    public int damage;
+public class Cards implements ICards {    	
+	protected int defence;
+    protected String name;
+    protected int health;
+    protected int damage;
   
     public Cards(
       String name,
@@ -34,6 +33,7 @@ public class Cards implements ICards {
     	this.health = health;
     }
     
+    
     public int getHealth() {
     	return health;
     }
@@ -49,5 +49,10 @@ public class Cards implements ICards {
     public int getDamage() {
     	return damage;
     }
+    
+    public String typeOFCard() {
+    	return "Creating Cards...";
+    }
+    
 
 }

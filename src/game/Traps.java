@@ -1,6 +1,8 @@
 package game;
 
 public class Traps extends Cards {
+	public Helper h;
+	public String CARD_TYPE = "TRAPS";
 
 	public Traps(String name, int damage, int health, int defence) {
 		super(name, damage,health,defence);        
@@ -16,12 +18,13 @@ public class Traps extends Cards {
     }
 
     @Override
-    public String toString() {
-        return 	"Trap Card" + "\n" +
+    public String typeOFCard() {
+        return 	CARD_TYPE + "\n" +
                 "Card Name: " + this.name + "\n" +
                 "Card Attack Power: " + this.damage + "\n" 
             + "Card Defence: " + this.defence + "\n" +
                "Card Health: " + this.defence +
                 "\n****************************\n";
     }
+    
 }

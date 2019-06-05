@@ -1,116 +1,85 @@
 package game;
 
-public class Duel extends Helper {
+public class Duel {
     private int skip;
     private String name;
     private String bot;
-    Monster play;
-    Player PLAYER_1; 
-    Player BOT;
+    
+    private Monster play;
+    private Rounds rounds;
+    private Player PLAYER_1; 
+    private Player BOT;
+    private Helper h;
     
     public Duel() {
     	PLAYER_1 = new Player(name);
     	BOT = new Player(bot);
+    	h = new Helper();
     }
 
-    public void startGame() {
-        out("******** Welcome To " + programName + "********" + " \n");
+	public void startGame() {
+        Helper.out("******** Welcome To " + h.programName + "********" + " \n");
 
-        out("Let's get started... " + "\n" + "Would you like to skip the instuction?");
+        Helper.out("Let's get started... " + "\n" + "Would you like to skip the instuction?");
 
         do {
-            out("Type (1) for yes and (2) for no");
+            Helper.out("Type (1) for yes and (2) for no");
 
-            while (!console.hasNextInt()) {
-                out("Type (1) for yes and (2) for no");
-                console.next();
+            while (!h.console.hasNextInt()) {
+                Helper.out("Type (1) for yes and (2) for no");
+                h.console.next();
             }
-            skip = console.nextInt();
+            skip = h.console.nextInt();
 
         } while (skip < 1 || skip > 2);
 
         if (skip == 1) {
-            out("Instruction skipped!");
+            Helper.out("Instruction skipped!");
             this.choosePlayer();
         } else if (skip == 2) {
-            out(this.instruction());
+            Helper.out(h.instruction());
             this.choosePlayer();
         }
     }
 
     private void choosePlayer() {
 
-        out("Choose any name you want... ");
+        Helper.out("Choose any name you want... ");
 
-        PLAYER_1.name = console.next();
+        PLAYER_1.name = h.console.next();
 
         name = PLAYER_1.name;
 
-        out("Thank you " + name + " Here is your Profile Cards and health Good Luck.. " + "\n"
+        Helper.out("Thank you " + name + " Here is your Profile Cards and health Good Luck.. " + "\n"
                 + "---------------------------------------------" + "\n" + PLAYER_1.profile(name) + "\n"
                 + "---------------------------------------------");
 
-        bot = this.generate(BOT.bots_name);
+        bot = h.generate(BOT.bots_name);
 
-        out("Challenger name is " + bot + "\n" + "Profile: " + "\n" + BOT.profile(bot));
+        Helper.out("Challenger name is " + bot + "\n" + "Profile: " + "\n" + BOT.profile(bot));
 
-        out("Would You like to proceed and Attack or go back to menu?");
+        Helper.out("Would You like to proceed and Attack or go back to menu?");
 
         do {
-            while (!console.hasNextInt()) {
-                out("Type (1) for yes and (2) for no");
-                console.next();
+        	Helper.out("Type (1) for yes and (2) for no");
+            while (!h.console.hasNextInt()) {
+                Helper.out("Type (1) for yes and (2) for no");
+                h.console.next();
             }
-            skip = console.nextInt();
+            skip = h.console.nextInt();
 
         } while (skip < 1 || skip > 2);
 
         if (skip == 1) {
-        	
-        	if (this.duel() == 1)
-        		out("Player one Wins");
-        		else if (this.duel() == 2)
-        		out("Bot one Wins");
+        	rounds = new Rounds(PLAYER_1, BOT);
+        	Helper.out(rounds.finalResult());
         	
         } else if (skip == 2) {
-            out("Going back to the menu.. ");
+            Helper.out("Going back to the menu.. ");
             this.startGame();
         } else {
-        	out("Type (1) for yes and (2) for no");
+        	Helper.out("Type (1) for yes and (2) for no");
         }
         
- 
     }
-  
-
-    public int duel() {
-    	
-    		out(
-    			"Preparing For Duel! " + PLAYER_1.monster.name + " VS." + BOT.monster.name
-    		);
-    			
-	        while (true) {
-	        	if (play.generateAttack(PLAYER_1.monster, BOT.monster)) {
-	        		PLAYER_1.health -= 1;
-	        		BOT.health -= 2;
-	        		out(
-	        				"Player 1 HEALTH: " + PLAYER_1.health + "\n" + 
-	        				"BOT HEALTH: " + BOT.health
-	        			);
-	        		return  1;
-	        	} else if (play.generateAttack(BOT.monster, PLAYER_1.monster)) {
-	        		PLAYER_1.health -= 2;
-	        		BOT.health -= 1;
-	        		out(
-	        				"Player 1 HEALTH: " + PLAYER_1.health + "\n" +
-	        				"BOT HEALTH: " + BOT.health
-	        			);
-	        		return 2;
-		        }
-	        }
-	        
-    }
-    
-    
-
 }
