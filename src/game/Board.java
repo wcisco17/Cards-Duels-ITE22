@@ -4,6 +4,6 @@ package game;
 	   public static void main(String[] args) {
 	        Duel d = new Duel();
 	        d.startGame();
-	   }
-		 
+
+	   } 
 }

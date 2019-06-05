@@ -75,4 +75,40 @@ public class Helper {
             int n = nums.nextInt(100);
             return n += 1;
         }
+        
+        protected boolean generateAttack(Cards card_1, Cards card_2) {
+        	card_1.setHealth(card_2.getHealth() - (card_1.getDamage() - card_2.getDefence()));
+        	
+        	if (card_2.health <= 0) {
+        		return true;
+        	}
+        	return false;
+        }
+        
+        protected boolean generateTrapsAttack(Traps card_1, Traps card_2) {
+        	card_1.setHealth(card_2.getHealth() - (card_1.getDamage() - card_2.getDefence()));
+        	
+        	if (card_2.health <= 0) {
+        		return true;
+        	}
+        	return false;
+        }
+        
+        protected boolean generateMagicianAttack(Magician card_1, Magician card_2) {
+        	card_1.setHealth(card_2.getHealth() - (card_1.getDamage() - card_2.getDefence()));
+        	
+        	if (card_2.health <= 0) {
+        		return true;
+        	}
+        	return false;
+        }
+        
+        protected int checkStatement(int statement) {
+    		if (statement == 1) {
+    			return 1;
+    		} else if (statement == 2) {
+    			return 2;
+    		}
+    		return 3;
+    	}
 }
